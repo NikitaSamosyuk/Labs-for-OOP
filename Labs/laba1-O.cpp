@@ -38,7 +38,7 @@ namespace containers {
         }
 
         // Конструктор перемещения
-        NameClass(NameClass&& other) noexcept : head(other.head), tail(other.tail), size(other.size) {
+        NameClass(NameClass&& other) : head(other.head), tail(other.tail), size(other.size) {
             other.head = other.tail = nullptr;
             other.size = 0;
         }
@@ -59,7 +59,7 @@ namespace containers {
         }
 
         // Оператор присваивания (перемещение)
-        NameClass& operator=(NameClass&& other) noexcept {
+        NameClass& operator=(NameClass&& other) {
             if (this == &other) return *this;
 
             clear();
@@ -167,7 +167,7 @@ namespace containers {
         }
 
         // Конструктор перемещения
-        RList(RList&& other) noexcept : head(other.head), size(other.size) {
+        RList(RList&& other) : head(other.head), size(other.size) {
             other.head = nullptr;
             other.size = 0;
         }
@@ -190,7 +190,7 @@ namespace containers {
         }
 
         // Оператор присваивания (перемещение)
-        RList& operator=(RList&& other) noexcept {
+        RList& operator=(RList&& other) {
             if (this == &other) return *this;
 
             clear();
